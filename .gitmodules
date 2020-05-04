@@ -1,0 +1,3 @@
+[submodule "Assets/Plugins/xNode"]
+	path = Assets/Plugins/xNode
+	url = https://github.com/Siccity/xNode.git
