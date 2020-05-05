@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3859656562417548903
+--- !u!114 &-7172543087736442362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,18 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa25ce8e6c14624bbc9f7eee4bc46a6, type: 3}
-  m_Name: Dialogue Line
+  m_Script: {fileID: 11500000, guid: 6975b79297025ca4e991b9776abf9a5a, type: 3}
+  m_Name: Decision
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -216, y: -472}
+  position: {x: -232, y: -464.5}
   ports:
     keys:
     - InputNode
-    - OutputNode
+    - Decisions
+    - Decisions 0
+    - Decisions 1
     values:
     - _fieldName: InputNode
-      _node: {fileID: -3859656562417548903}
+      _node: {fileID: -7172543087736442362}
       _typeQualifiedName: TVB.Dialogue.BaseDialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
@@ -31,20 +33,43 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: OutputNode
-      _node: {fileID: -3859656562417548903}
-      _typeQualifiedName: TVB.Dialogue.BaseDialogueNode, Assembly-CSharp, Version=0.0.0.0,
+    - _fieldName: Decisions
+      _node: {fileID: -7172543087736442362}
+      _typeQualifiedName: TVB.Dialogue.Decision[], Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: Decisions 0
+      _node: {fileID: -7172543087736442362}
+      _typeQualifiedName: TVB.Dialogue.Decision, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: InputNode
+        node: {fileID: 4337721536727087283}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Decisions 1
+      _node: {fileID: -7172543087736442362}
+      _typeQualifiedName: TVB.Dialogue.Decision, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: InputNode
+        node: {fileID: 1313910510866845284}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   InputNode: {fileID: 0}
-  OutputNode: {fileID: 0}
-  TextValues:
-  - Text: "\u010Cau"
-    Language: 7
+  Decisions:
+  - Text: No?
+  - Text: Jo!
 --- !u!114 &-291566891131399260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +104,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: InputNode
-        node: {fileID: -3859656562417548903}
+        node: {fileID: -7172543087736442362}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -104,4 +129,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -291566891131399260}
-  - {fileID: -3859656562417548903}
+  - {fileID: -7172543087736442362}
+  - {fileID: 4337721536727087283}
+  - {fileID: 1313910510866845284}
+--- !u!114 &1313910510866845284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa25ce8e6c14624bbc9f7eee4bc46a6, type: 3}
+  m_Name: Dialogue Line
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 120, y: -296}
+  ports:
+    keys:
+    - InputNode
+    - OutputNode
+    values:
+    - _fieldName: InputNode
+      _node: {fileID: 1313910510866845284}
+      _typeQualifiedName: TVB.Dialogue.BaseDialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Decisions 1
+        node: {fileID: -7172543087736442362}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: OutputNode
+      _node: {fileID: 1313910510866845284}
+      _typeQualifiedName: TVB.Dialogue.BaseDialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  InputNode: {fileID: 0}
+  OutputNode: {fileID: 0}
+  TextValues:
+  - Text: Jo 1!
+    Language: 7
+--- !u!114 &4337721536727087283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa25ce8e6c14624bbc9f7eee4bc46a6, type: 3}
+  m_Name: Dialogue Line
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 127, y: -513.5}
+  ports:
+    keys:
+    - InputNode
+    - OutputNode
+    values:
+    - _fieldName: InputNode
+      _node: {fileID: 4337721536727087283}
+      _typeQualifiedName: TVB.Dialogue.BaseDialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Decisions 0
+        node: {fileID: -7172543087736442362}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: OutputNode
+      _node: {fileID: 4337721536727087283}
+      _typeQualifiedName: TVB.Dialogue.BaseDialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  InputNode: {fileID: 0}
+  OutputNode: {fileID: 0}
+  TextValues:
+  - Text: No 1?
+    Language: 7
