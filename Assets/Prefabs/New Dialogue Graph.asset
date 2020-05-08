@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Decision
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -232, y: -464.5}
+  position: {x: -232, y: -472}
   ports:
     keys:
     - InputNode
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: -296}
+  position: {x: 120, y: -344}
   ports:
     keys:
     - InputNode
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 127, y: -513.5}
+  position: {x: 120, y: -600}
   ports:
     keys:
     - InputNode
