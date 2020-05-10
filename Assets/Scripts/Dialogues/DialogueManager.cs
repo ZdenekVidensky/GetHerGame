@@ -20,6 +20,26 @@
         private GUIBubble             m_Bubble;
         [SerializeField]
         private TMPro.TextMeshProUGUI m_Subtitles;
+        [SerializeField]
+        private GUIDecisions          m_Decisions;
+
+        // PRIVATE MEMBERS
+
+        private int m_SelectedDecision = -1;
+
+        // MONOBEHAVIOUR
+
+        private void Start()
+        {
+            m_Decisions.OnDecisionSelected += OnDecisionSelected;
+        }
+
+        private void OnDestroy()
+        {
+            m_Decisions.OnDecisionSelected -= OnDecisionSelected;
+        }
+
+        // PUBLIC METHODS
 
         public IEnumerator StartDialogue(DialogueGraph graph)
         {
@@ -57,17 +77,23 @@
                     yield return ProcessDialogueNode(output.node as BaseDialogueNode);
                     break;
                 case DecisionNode decisionNode:
-                    for (int idx = 0; idx < decisionNode.Decisions.Length; idx++)
-                    {
-                        var decision = decisionNode.Decisions[idx];
-                        Debug.LogError(decision.Text);
-                        var decOutput = decisionNode.GetOutputPort($"{nameof(DecisionNode.Decisions)} {idx}");
 
-                        if (decOutput != null && decOutput.Connection != null)
-                        {
-                            ProcessDialogueNode(decOutput.Connection.node as BaseDialogueNode);
-                        }
+                    m_Decisions.SetData(decisionNode.Decisions);
+                    m_Decisions.SetActive(true);
+
+                    while (m_SelectedDecision < 0)
+                        yield return null;
+
+                    m_Decisions.SetActive(false);
+
+                    var decOutput = decisionNode.GetOutputPort($"{nameof(DecisionNode.Decisions)} {m_SelectedDecision}");
+                    m_SelectedDecision = -1;
+
+                    if (decOutput != null && decOutput.Connection != null)
+                    {
+                        yield return ProcessDialogueNode(decOutput.Connection.node as BaseDialogueNode);
                     }
+
                     break;
             }
         }
@@ -95,6 +121,11 @@
 
             m_Subtitles.gameObject.SetActive(false);
             m_Bubble.SetActive(false);
+        }
+
+        private void OnDecisionSelected(int selection)
+        {
+            m_SelectedDecision = selection;
         }
     }
 }

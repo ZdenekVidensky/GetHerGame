@@ -19,7 +19,7 @@
         public virtual IEnumerator Talk(string text)
         {
             IsTalking = true;
-            yield return new WaitForSeconds(text.Length / 5f);
+            yield return new WaitForSeconds(Mathf.Clamp(text.Length / 10f, 1f, 2.5f));
             IsTalking = false;
         }
     }

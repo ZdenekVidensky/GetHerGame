@@ -9,13 +9,7 @@
     {
         [Input] public BaseDialogueNode InputNode;
 
-        [Output(dynamicPortList = true)] public Decision[] Decisions;
-    }
-
-    [System.Serializable]
-    public struct Decision
-    {
-        public string Text;
+        [Output(dynamicPortList = true)] public string[] Decisions;
     }
 }
 
