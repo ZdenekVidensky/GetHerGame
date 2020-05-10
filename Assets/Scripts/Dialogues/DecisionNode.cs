@@ -1,4 +1,4 @@
-﻿namespace TVB.Dialogue
+﻿namespace TVB.Game.Dialogues
 {
     using UnityEngine;
 

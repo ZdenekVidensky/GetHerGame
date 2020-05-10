@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 6359597348988269283}
   - component: {fileID: 5967347174620523936}
   - component: {fileID: 6359597348988269292}
-  - component: {fileID: 7796497257956065314}
-  - component: {fileID: 5678647313435751586}
   - component: {fileID: 1936061172353303793}
   m_Layer: 0
   m_Name: Boy
@@ -145,36 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 6
-  m_InteractivityRadius: 3
+  m_InteractivityDistance: 3
   m_CharacterController: {fileID: 0}
---- !u!114 &7796497257956065314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6359597348988269286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cc31239dc0c57b4a9954ea9fc9e1b50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Color: {r: 0.15886435, g: 0.31009254, b: 0.9622642, a: 1}
-  m_BubbleAnchor: {fileID: 0}
-  m_DialogueComponent: {fileID: 0}
---- !u!114 &5678647313435751586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6359597348988269286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558f305b17dca894184d3300113fb824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsTalking: 0
+  m_Character: {fileID: 0}
 --- !u!114 &1936061172353303793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fcefccb8fc00746be97a48ee5d2c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0.23148806, g: 0.3197268, b: 0.9622642, a: 0}
+  BubbleAnchor: {fileID: 4460407024426940920}
+  Color: {r: 0.23148806, g: 0.3197268, b: 0.9622642, a: 1}
   IsTalking: 0
+  IsBusy: 0
+  DialogueManager: {fileID: 0}
 --- !u!1 &8433340158815008312
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8433340158815008312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 1.63, z: 0}
+  m_LocalPosition: {x: 0.7, y: 1.63, z: 0.355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6359597348988269287}

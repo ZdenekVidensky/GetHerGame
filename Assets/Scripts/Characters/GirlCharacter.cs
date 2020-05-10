@@ -1,23 +1,23 @@
-﻿using UnityEngine;
+﻿using TVB.Game.Dialogues;
+using UnityEngine;
 
 namespace TVB.Game.Characters
 {
-    class GirlCharacter : CharacterBase
+    class GirlCharacter : Character
     {
-        public int Atractivity => m_Atracitivity;
-
-        private int m_Atracitivity = 0;
+        public DialogueGraph DialogueGraph;
+        public int           Atractivity;
 
         public override void Initialize()
         {
             base.Initialize();
-            m_Atracitivity = 0;
+            Atractivity = 0;
         }
 
         public void AddAtractivity(int value)
         {
-            m_Atracitivity = Mathf.Clamp(m_Atracitivity + value, 0, int.MaxValue);
-            Debug.Log($"Girl: Atractivity changed on {m_Atracitivity}");
+            Atractivity = Mathf.Clamp(Atractivity + value, 0, int.MaxValue);
+            Debug.Log($"Girl: Atractivity changed on {Atractivity}");
         }
     }
 }

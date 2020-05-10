@@ -1,7 +1,11 @@
 ﻿namespace TVB.Game.Characters
 {
-    class BoyCharacter : CharacterBase
+    using TVB.Game.Dialogues;
+    
+    class BoyCharacter : Character
     {
+        public DialogueManager DialogueManager;
+
         public override void Initialize()
         {
             base.Initialize();

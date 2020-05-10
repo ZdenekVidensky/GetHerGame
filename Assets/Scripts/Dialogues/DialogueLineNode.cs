@@ -1,4 +1,4 @@
-﻿namespace TVB.Dialogue
+﻿namespace TVB.Game.Dialogues
 {
     using UnityEngine;
 
@@ -10,6 +10,7 @@
         [Input]  public BaseDialogueNode InputNode;
         [Output] public BaseDialogueNode OutputNode;
 
+        public ECharacter  Character;
         public TextValue[] TextValues;
     }
 
@@ -18,5 +19,11 @@
     {
         public string         Text;
         public SystemLanguage Language;
+    }
+
+    public enum ECharacter
+    {
+        Boy,
+        Girl
     }
 }
