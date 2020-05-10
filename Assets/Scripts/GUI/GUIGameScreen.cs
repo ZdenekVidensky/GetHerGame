@@ -1,9 +1,10 @@
 ﻿namespace TVB.Game.GUI
 {
-    using TVB.Core.Attributes;
     using UnityEngine;
+    using TVB.Core.Attributes;
+    using TVB.Core.GUI;
 
-    class GUIDialogueScreen : MonoBehaviour
+    class GUIGameScreen : GUIScreen
     {
         [SerializeField]
         private GUIPlayerComponent m_PlayerComponent;

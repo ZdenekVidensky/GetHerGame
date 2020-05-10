@@ -8,10 +8,10 @@
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E) == true)
-            {
-                IsTalking = !IsTalking;
-            }
+            //if (Input.GetKeyDown(KeyCode.E) == true)
+            //{
+            //    IsTalking = !IsTalking;
+            //}
         }
     }
 }
