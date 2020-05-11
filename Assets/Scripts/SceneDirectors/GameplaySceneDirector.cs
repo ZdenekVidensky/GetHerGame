@@ -15,10 +15,14 @@
         [SerializeField]
         private int           m_GoalAtractivity = 100;
         [SerializeField]
+        private int           m_InitAtractivity = 20;
+
+        [SerializeField]
         private Frontend      m_Frontend;
 
         private bool          m_IsFinished          = false;
         private bool          m_AtractivityAchieved = false;
+        private int           m_AtractivityCheckInterval = 30;
 
         // SCENEDIRECTOR INTERFACE
 
@@ -28,7 +32,7 @@
         public override void Initialize()
         {
             m_BoyCharacter.Initialize();
-            m_GirlCharacter.Initialize();
+            m_GirlCharacter.Initialize(m_InitAtractivity, m_GoalAtractivity);
             m_Frontend.Initialize();
 
             Debug.Log("GameplaySceneDirector initialized!");
@@ -44,9 +48,14 @@
             if (m_AtractivityAchieved == true)
                 return;
 
-            if (m_GirlCharacter.Atractivity >= m_GoalAtractivity)
+            if (Time.frameCount % m_AtractivityCheckInterval != 0)
+                return;
+
+            var atractivity = m_GirlCharacter.Atractivity;
+
+            if (atractivity >= m_GoalAtractivity || atractivity <= 0)
             {
-                OnAtractivityAchieved();
+                OnAtractivityAchieved(atractivity);
                 m_AtractivityAchieved = true;
             }
         }
@@ -57,9 +66,9 @@
 
         // PRIVATE METHODS
 
-        private void OnAtractivityAchieved()
+        private void OnAtractivityAchieved(int atractivity)
         {
-            Debug.LogError("Game Over!");
+            Debug.LogError($"Game Over! Final atractivity: {atractivity}");
             m_IsFinished = true;
         }
     }

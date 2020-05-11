@@ -69,15 +69,8 @@
             {
                 case DialogueLineNode lineNode:
                     yield return Talk(lineNode.Character, lineNode.TextValues[0].Text); // TODO: Language
-
-                    var output = lineNode.GetPort(nameof(DialogueLineNode.OutputNode))?.Connection;
-                    if (output == null)
-                        yield break;
-
-                    yield return ProcessDialogueNode(output.node as BaseDialogueNode);
                     break;
                 case DecisionNode decisionNode:
-
                     m_Decisions.SetData(decisionNode.Decisions);
                     m_Decisions.SetActive(true);
 
@@ -92,10 +85,59 @@
                     if (decOutput != null && decOutput.Connection != null)
                     {
                         yield return ProcessDialogueNode(decOutput.Connection.node as BaseDialogueNode);
+                        yield break;
+                    }
+                    break;
+                case ChangeAtractivityNode changeAtractivityNode:
+                    m_GirlCharacter.ChangeAttractivity(changeAtractivityNode.ChangedValue);
+                    break;
+                case AtractivityConditionNode conditionNode:
+                    var selectedIndex = -1;
+
+                    for (int idx = 0, count = conditionNode.Conditions.Length; idx < count; idx++)
+                    {
+                        var condition = conditionNode.Conditions[idx];
+                        switch (condition.Type)
+                        {
+                            case EConditionType.Equals when m_GirlCharacter.Atractivity == condition.Atractivity:
+                                selectedIndex = idx;
+                                break;
+                            case EConditionType.Greater when m_GirlCharacter.Atractivity > condition.Atractivity:
+                                selectedIndex = idx;
+                                break;
+                            case EConditionType.GreaterEquals when m_GirlCharacter.Atractivity >= condition.Atractivity:
+                                selectedIndex = idx;
+                                break;
+                            case EConditionType.Less when m_GirlCharacter.Atractivity < condition.Atractivity:
+                                selectedIndex = idx;
+                                break;
+                            case EConditionType.LessEquals when m_GirlCharacter.Atractivity <= condition.Atractivity:
+                                selectedIndex = idx;
+                                break;
+                        }
+
+                        if (selectedIndex >= 0)
+                            break;
+                    }
+
+                    if (selectedIndex >= 0)
+                    {
+                        var conditionOutput = conditionNode.GetOutputPort($"{nameof(AtractivityConditionNode.Conditions)} {selectedIndex}");
+                        if (conditionOutput != null && conditionOutput.Connection != null)
+                        {
+                            yield return ProcessDialogueNode(conditionOutput.Connection.node as BaseDialogueNode);
+                            yield break;
+                        }
                     }
 
                     break;
             }
+
+            var output = node.GetPort(nameof(DialogueLineNode.OutputNode))?.Connection;
+            if (output == null)
+                yield break;
+
+            yield return ProcessDialogueNode(output.node as BaseDialogueNode);
         }
 
         private IEnumerator Talk(ECharacter character, string text)

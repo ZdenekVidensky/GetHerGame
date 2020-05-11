@@ -2,9 +2,7 @@
 {
     using UnityEngine;
 
-    using XNode;
-
-    [CreateNodeMenu("DialogueNode")]
+    [CreateNodeMenu("DialogueNode"), NodeTint("#4564e9")]
     class DialogueLineNode : BaseDialogueNode
     {
         [Input]  public BaseDialogueNode InputNode;

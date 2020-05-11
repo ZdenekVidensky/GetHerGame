@@ -14,12 +14,12 @@
 
         public void OnAddAtractivity()
         {
-            m_GirlCharacter.AddAtractivity(10);
+            m_GirlCharacter.ChangeAttractivity(10);
         }
 
         public void OnRemoveAtractivity()
         {
-            m_GirlCharacter.AddAtractivity(-10);
+            m_GirlCharacter.ChangeAttractivity(-10);
         }
     }
 }

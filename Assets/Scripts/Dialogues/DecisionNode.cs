@@ -2,9 +2,7 @@
 {
     using UnityEngine;
 
-    using XNode;
-
-    [CreateNodeMenu("DecisionNode"), System.Serializable]
+    [CreateNodeMenu("DecisionNode"), NodeTint("#49eb45")]
     class DecisionNode : BaseDialogueNode
     {
         [Input] public BaseDialogueNode InputNode;
