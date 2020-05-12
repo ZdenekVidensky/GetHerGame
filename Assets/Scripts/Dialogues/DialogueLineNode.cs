@@ -9,14 +9,7 @@
         [Output] public BaseDialogueNode OutputNode;
 
         public ECharacter  Character;
-        public TextValue[] TextValues;
-    }
-
-    [System.Serializable]
-    public struct TextValue
-    {
-        public string         Text;
-        public SystemLanguage Language;
+        public string      Text;
     }
 
     public enum ECharacter

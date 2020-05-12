@@ -9,17 +9,19 @@
         private BoyCharacter m_BoyCharacter;
         [SerializeField]
         private GirlCharacter m_GirlCharacter;
+        [SerializeField]
+        private int m_Change = 10;
 
         // HANDLERS
 
         public void OnAddAtractivity()
         {
-            m_GirlCharacter.ChangeAttractivity(10);
+            StartCoroutine(m_GirlCharacter.ChangeAttractivity(m_Change));
         }
 
         public void OnRemoveAtractivity()
         {
-            m_GirlCharacter.ChangeAttractivity(-10);
+            StartCoroutine(m_GirlCharacter.ChangeAttractivity(-m_Change));
         }
     }
 }

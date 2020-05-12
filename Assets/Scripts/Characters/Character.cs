@@ -8,12 +8,12 @@
         public Transform BubbleAnchor;
         public Color     Color;
         public bool      IsTalking;
-        public bool      IsBusy;
+        public bool      CanMove;
 
         public virtual void Initialize()
         {
             IsTalking = false;
-            IsBusy    = false;
+            CanMove   = true;
         }
 
         public virtual IEnumerator Talk(string text)

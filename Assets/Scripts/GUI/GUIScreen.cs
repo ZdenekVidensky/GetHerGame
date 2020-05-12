@@ -10,5 +10,7 @@
         {
             Frontend = frontend;
         }
+
+        public virtual void Deinitialize() { }
     }
 }

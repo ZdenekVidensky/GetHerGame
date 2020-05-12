@@ -1,4 +1,5 @@
-﻿using TVB.Game.Dialogues;
+﻿using System.Collections;
+using TVB.Game.Dialogues;
 using TVB.Game.GUI;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace TVB.Game.Characters
         {
             Atractivity = initAtractivity;
             m_GirlHUD.Initialize(initAtractivity, goalAtractivity);
+            m_GirlHUD.SetActive(true);
         }
 
         public override void Initialize()
@@ -24,12 +26,15 @@ namespace TVB.Game.Characters
             Atractivity = 0;
         }
 
-        public void ChangeAttractivity(int changedValue)
+        public IEnumerator ChangeAttractivity(int changedValue)
         {
-            StartCoroutine(m_GirlHUD.ChangeValue(changedValue));
-
+            yield return m_GirlHUD.ChangeValue(changedValue);
             Atractivity = Mathf.Clamp(Atractivity + changedValue, 0, int.MaxValue);
-            Debug.Log($"Girl: Atractivity changed on {Atractivity}");
+        }
+
+        public void SetInactive()
+        {
+            m_GirlHUD.SetActive(false);
         }
     }
 }

@@ -23,7 +23,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if (m_Character.IsBusy == true)
+        if (m_Character.CanMove == false)
             return;
 
         if (Input.GetKey(KeyCode.LeftArrow) == true)

@@ -42,7 +42,7 @@ MonoBehaviour:
       _dynamic: 0
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
-  ChangedValue: 25
+  ChangedValue: 60
 --- !u!114 &-5449197636913781994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,9 +89,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 1
-  TextValues:
-  - Text: Nazdar!
-    Language: 7
+  Text: Ahoj
 --- !u!114 &-4331672234094128115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,9 +136,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 0
-  TextValues:
-  - Text: "F\u016Fj, ty jsi ale o\u0161kliv\xE1!"
-    Language: 7
+  Text: "Ty jsi ale o\u0161klivka!"
 --- !u!114 &-2820480331423440255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,9 +183,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 0
-  TextValues:
-  - Text: "Co tu d\u011Bl\xE1 takov\xE1 hezk\xE1 holka, jako ty?"
-    Language: 7
+  Text: "Tob\u011B to dneska ale slu\u0161\xED!"
 --- !u!114 &-62417775884126103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,9 +230,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 1
-  TextValues:
-  - Text: "Ty m\xE1\u0161 co \u0159\xEDkat, ty ksichte!"
-    Language: 7
+  Text: "Ty m\xE1\u0161 co \u0159\xEDkat, ty ksichte"
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,9 +345,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 0
-  TextValues:
-  - Text: Ahoj
-    Language: 7
+  Text: Ahoj
 --- !u!114 &2723862473668322623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,9 +392,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 0
-  TextValues:
-  - Text: "Co si to tu n\u011Bkde rozdat?"
-    Language: 7
+  Text: Co si to rozdat?
 --- !u!114 &2976102280044236263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,9 +439,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 1
-  TextValues:
-  - Text: "S tebou? To v\u016Fbec!"
-    Language: 7
+  Text: Fuj, s tebou? To ani omylem!
 --- !u!114 &5909067940966222598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,9 +486,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 1
-  TextValues:
-  - Text: "Jo ty krasav\u010De, jdeme na to!"
-    Language: 7
+  Text: Tak jo!
 --- !u!114 &6431815896480587096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,9 +689,7 @@ MonoBehaviour:
   InputNode: {fileID: 0}
   OutputNode: {fileID: 0}
   Character: 1
-  TextValues:
-  - Text: "Hi hi hi. Ty lichotn\xEDku!"
-    Language: 7
+  Text: "Ah, d\xEDky."
 --- !u!114 &8141264572151466663
 MonoBehaviour:
   m_ObjectHideFlags: 0

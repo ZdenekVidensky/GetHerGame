@@ -43,11 +43,11 @@
 
         public IEnumerator StartDialogue(DialogueGraph graph)
         {
-            m_BoyCharacter.IsBusy = true;
+            m_BoyCharacter.CanMove = false;
 
             if (graph.nodes.Count == 0)
             {
-                m_BoyCharacter.IsBusy = false;
+                m_BoyCharacter.CanMove = true;
                 yield break;
             }
 
@@ -56,7 +56,7 @@
                 yield return ProcessDialogueNode(dialogueNode);
             }
 
-            m_BoyCharacter.IsBusy = false;
+            m_BoyCharacter.CanMove = true;
             yield break;
         }
 
@@ -68,7 +68,7 @@
             switch (node)
             {
                 case DialogueLineNode lineNode:
-                    yield return Talk(lineNode.Character, lineNode.TextValues[0].Text); // TODO: Language
+                    yield return Talk(lineNode.Character, lineNode.Text);
                     break;
                 case DecisionNode decisionNode:
                     m_Decisions.SetData(decisionNode.Decisions);
@@ -89,7 +89,7 @@
                     }
                     break;
                 case ChangeAtractivityNode changeAtractivityNode:
-                    m_GirlCharacter.ChangeAttractivity(changeAtractivityNode.ChangedValue);
+                    StartCoroutine(m_GirlCharacter.ChangeAttractivity(changeAtractivityNode.ChangedValue));
                     break;
                 case AtractivityConditionNode conditionNode:
                     var selectedIndex = -1;

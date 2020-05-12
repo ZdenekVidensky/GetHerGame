@@ -2,16 +2,27 @@
 {
     using System.Collections;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
     public class GameManager : MonoBehaviour
     {
         private SceneDirector m_ActiveSceneDirector;
+        //private static bool GameManagerExists;
+
         private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
+            //if (GameManagerExists == false)
+            //{
+            //    GameManagerExists = true;
+            //    DontDestroyOnLoad(this.gameObject);
+            //}
+            //else
+            //{
+            //    Destroy(this.gameObject);
+            //}
         }
 
-        private IEnumerator Start()
+        private void Start()
         {
             if (m_ActiveSceneDirector == null)
             {
@@ -19,7 +30,7 @@
             }
 
             m_ActiveSceneDirector.Initialize();
-            yield return null;
+            m_ActiveSceneDirector.Play();
         }
 
         private void Update()
@@ -28,6 +39,14 @@
                 return;
 
             m_ActiveSceneDirector.Update();
+
+            if (m_ActiveSceneDirector.IsFinished == true)
+            {
+                SceneManager.LoadScene("MainScene");
+                m_ActiveSceneDirector = FindObjectOfType(typeof(SceneDirector)) as SceneDirector;
+                m_ActiveSceneDirector.Initialize();
+                m_ActiveSceneDirector.Play();
+            }
         }
 
         private void OnDestroy()
