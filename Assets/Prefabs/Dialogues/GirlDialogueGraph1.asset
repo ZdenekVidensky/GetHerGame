@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Change Atractivity
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1080, y: -552}
+  position: {x: 984, y: -520}
   ports:
     keys:
     - InputNode
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -392, y: -376}
+  position: {x: -296, y: -376}
   ports:
     keys:
     - InputNode
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 360, y: -216}
+  position: {x: 392, y: -248}
   ports:
     keys:
     - InputNode
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: Change Atractivity
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1554.6372, y: 58.794857}
+  position: {x: 1416, y: 72}
   ports:
     keys:
     - InputNode
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -680, y: -184}
+  position: {x: -584, y: -200}
   ports:
     keys:
     - InputNode
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 360, y: 104}
+  position: {x: 392, y: 8}
   ports:
     keys:
     - InputNode
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1192, y: 360}
+  position: {x: 1112, y: 296}
   ports:
     keys:
     - InputNode
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1176, y: 72}
+  position: {x: 1112, y: 72}
   ports:
     keys:
     - InputNode
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: Atractivity Condition
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 712, y: 120}
+  position: {x: 744, y: 56}
   ports:
     keys:
     - InputNode
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: Decision
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -40, y: -376}
+  position: {x: 24, y: -408}
   ports:
     keys:
     - InputNode
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Name: Dialogue Line
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 744, y: -552}
+  position: {x: 696, y: -536}
   ports:
     keys:
     - InputNode
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Name: Change Atractivity
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1104.517, y: -181.9949}
+  position: {x: 1032, y: -184}
   ports:
     keys:
     - InputNode
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: Change Atractivity
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1587.3073, y: 423.00488}
+  position: {x: 1464, y: 344}
   ports:
     keys:
     - InputNode
