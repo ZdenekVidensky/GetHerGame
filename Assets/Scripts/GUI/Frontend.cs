@@ -10,7 +10,7 @@
         
         public void Initialize()
         {
-            var m_Screens = GetComponentsInChildren<GUIScreen>();
+            var m_Screens = GetComponentsInChildren<GUIScreen>(true);
 
             for (int idx = 0, count = m_Screens.Length; idx < count; idx++)
             {

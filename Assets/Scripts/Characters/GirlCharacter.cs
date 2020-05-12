@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TVB.Core.Attributes;
 using TVB.Game.Dialogues;
 using TVB.Game.GUI;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace TVB.Game.Characters
 
         [Header("GUI"), SerializeField]
         private GUIGirlHUD m_GirlHUD;
+        [GetComponent(true), SerializeField, HideInInspector]
+        private InteractableObject m_InteractableObject;
 
         public void Initialize(int initAtractivity, int goalAtractivity)
         {
@@ -30,6 +33,11 @@ namespace TVB.Game.Characters
         {
             yield return m_GirlHUD.ChangeValue(changedValue);
             Atractivity = Mathf.Clamp(Atractivity + changedValue, 0, int.MaxValue);
+        }
+
+        public void SetInteractable(bool state)
+        {
+            m_InteractableObject.SetGUIActive(state);
         }
 
         public void SetInactive()

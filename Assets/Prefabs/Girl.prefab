@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7190718113731589908}
   - component: {fileID: 150957701629883731}
   - component: {fileID: 2510231413465518016}
+  - component: {fileID: 2401626096864544183}
   m_Layer: 9
   m_Name: Girl
   m_TagString: Player
@@ -142,9 +143,10 @@ MonoBehaviour:
   BubbleAnchor: {fileID: 463246859915885580}
   Color: {r: 0.9433962, g: 0.15574935, b: 0.8740673, a: 1}
   IsTalking: 0
-  IsBusy: 0
+  CanMove: 0
   DialogueGraph: {fileID: 0}
   Atractivity: 0
+  m_GirlHUD: {fileID: 0}
 --- !u!114 &2510231413465518016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbed5f7e20dc1e47bdca2a3a7ed0c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_GUIObject: {fileID: 0}
+--- !u!65 &2401626096864544183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190718113731589906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}

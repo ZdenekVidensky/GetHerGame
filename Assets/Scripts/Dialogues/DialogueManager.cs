@@ -44,6 +44,7 @@
         public IEnumerator StartDialogue(DialogueGraph graph)
         {
             m_BoyCharacter.CanMove = false;
+            m_GirlCharacter.SetInteractable(false);
 
             if (graph.nodes.Count == 0)
             {
@@ -57,6 +58,7 @@
             }
 
             m_BoyCharacter.CanMove = true;
+            m_GirlCharacter.SetInteractable(true);
             yield break;
         }
 

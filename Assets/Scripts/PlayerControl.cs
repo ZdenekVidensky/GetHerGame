@@ -50,9 +50,7 @@ public class PlayerControl : MonoBehaviour
                 var interactableObject = hit.collider.GetComponent<InteractableObject>();
                 if (interactableObject != null)
                 {
-                    // TODO
-                    Debug.LogError("Hitted object!");
-                    return;
+                    interactableObject.SetGUIActive(false);
                 }
             }
         }

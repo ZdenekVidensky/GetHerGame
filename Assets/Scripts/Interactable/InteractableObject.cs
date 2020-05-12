@@ -2,16 +2,29 @@
 {
     using UnityEngine;
     
+    using TVB.Game.GUI;
+    
     [RequireComponent(typeof(Collider))]
     class InteractableObject : MonoBehaviour
     {
-        private bool m_PlayerIn = false;
+        [SerializeField]
+        private GUIInteractableObject m_GUIObject;
+
+        public void SetText(string text)
+        {
+            m_GUIObject.SetText(text);
+        }
+
+        public void SetGUIActive(bool state)
+        {
+            m_GUIObject.SetActive(state);
+        }
 
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.CompareTag("Player") == true)
             {
-                m_PlayerIn = true;
+                m_GUIObject.ShowText();
             }
         }
         
@@ -19,7 +32,7 @@
         {
             if (collision.gameObject.CompareTag("Player") == true)
             {
-                m_PlayerIn = false;
+                m_GUIObject.HideText();
             }
         }
     }

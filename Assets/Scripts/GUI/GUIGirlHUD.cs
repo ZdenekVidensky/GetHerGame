@@ -34,7 +34,7 @@
 
             var step       = changedValue > 0 ? 1 : -1;
             var finalValue = m_ProgressBar.value + changedValue;
-            var wait       = new WaitForSeconds(0.05f);
+            var wait       = new WaitForSeconds(0.02f);
 
             m_ChangedValue.SetActive(true);
             yield return m_Animation.PlayAndWait();
