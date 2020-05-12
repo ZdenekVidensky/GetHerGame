@@ -8,7 +8,7 @@
 
         public abstract void Initialize();
         public abstract void Play();
-        public abstract void Update();
+        public abstract void OnUpdate();
         public abstract void Deinitialize();
     }
 }

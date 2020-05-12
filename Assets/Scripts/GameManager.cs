@@ -38,7 +38,7 @@
             if (m_ActiveSceneDirector == null)
                 return;
 
-            m_ActiveSceneDirector.Update();
+            m_ActiveSceneDirector.OnUpdate();
 
             if (m_ActiveSceneDirector.IsFinished == true)
             {

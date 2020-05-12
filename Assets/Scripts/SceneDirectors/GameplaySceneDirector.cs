@@ -51,7 +51,7 @@
             m_EndScreen.SetActive(false);
         }
 
-        public override void Update()
+        public override void OnUpdate()
         {
             if (m_IsPlaying == false)
                 return;
