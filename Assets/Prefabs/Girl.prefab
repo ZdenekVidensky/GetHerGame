@@ -64,9 +64,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 463246859915885580}
+  - {fileID: 1721645487288053798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!33 &7190718113731589910
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82,7 +83,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7190718113731589906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -93,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 09ac7f42e6de6e24e95cc114dcf1f231, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,9 +145,11 @@ MonoBehaviour:
   Color: {r: 0.9433962, g: 0.15574935, b: 0.8740673, a: 1}
   IsTalking: 0
   CanMove: 0
-  DialogueGraph: {fileID: 0}
+  DialogueGraph: {fileID: 11400000, guid: eba3482a02827ad448d57bfffa1d771d, type: 2}
   Atractivity: 0
+  m_Animator: {fileID: 8750072633873259868}
   m_GirlHUD: {fileID: 0}
+  m_InteractableObject: {fileID: 0}
 --- !u!114 &2510231413465518016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +176,100 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 2, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &5953257039960267580
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7190718113731589907}
+    m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2488186887c0c2e4eae40c51e7e4be74, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+        'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+        'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'Angry'"
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2b7e4778a6e536642bf853cbb8776a54,
+        type: 3}
+      propertyPath: m_Name
+      value: girl_model
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b7e4778a6e536642bf853cbb8776a54, type: 3}
+--- !u!4 &1721645487288053798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2b7e4778a6e536642bf853cbb8776a54,
+    type: 3}
+  m_PrefabInstance: {fileID: 5953257039960267580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8750072633873259868 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 2b7e4778a6e536642bf853cbb8776a54,
+    type: 3}
+  m_PrefabInstance: {fileID: 5953257039960267580}
+  m_PrefabAsset: {fileID: 0}

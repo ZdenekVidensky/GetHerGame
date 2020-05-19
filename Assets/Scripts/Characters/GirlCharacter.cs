@@ -11,10 +11,18 @@ namespace TVB.Game.Characters
         public DialogueGraph DialogueGraph;
         public int           Atractivity;
 
+        [SerializeField]
+        private Animator m_Animator;
+
         [Header("GUI"), SerializeField]
         private GUIGirlHUD m_GirlHUD;
         [GetComponent(true), SerializeField, HideInInspector]
         private InteractableObject m_InteractableObject;
+
+        private static int TalkingHash   = Animator.StringToHash("IsTalking");
+        private static int AngryHash     = Animator.StringToHash("Angry");
+        private static int LooserHash    = Animator.StringToHash("Looser");
+        private static int LaughtingHash = Animator.StringToHash("Laughting");
 
         public void Initialize(int initAtractivity, int goalAtractivity)
         {
@@ -43,6 +51,33 @@ namespace TVB.Game.Characters
         public void SetInactive()
         {
             m_GirlHUD.SetActive(false);
+        }
+
+        // Animations
+
+        public void Laught()
+        {
+            m_Animator.SetTrigger(LaughtingHash);
+        }
+
+        public void StartTalking()
+        {
+            m_Animator.SetBool(TalkingHash, true);
+        }
+
+        public void StopTalking()
+        {
+            m_Animator.SetBool(TalkingHash, false);
+        }
+
+        public void Angry()
+        {
+            m_Animator.SetTrigger(AngryHash);
+        }
+
+        public void Looser()
+        {
+            m_Animator.SetTrigger(LooserHash);
         }
     }
 }
