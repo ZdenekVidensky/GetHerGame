@@ -1,1 +1,2 @@
-# Oxenfree-DialogueSystem
+# Get Her Game
+Small dialogue based game.
