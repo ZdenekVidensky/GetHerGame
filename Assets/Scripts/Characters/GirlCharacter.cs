@@ -53,6 +53,13 @@ namespace TVB.Game.Characters
             m_GirlHUD.SetActive(false);
         }
 
+        public override IEnumerator Talk(string text)
+        {
+            StartTalking();
+            yield return base.Talk(text);
+            StopTalking();
+        }
+
         // Animations
 
         public void Laught()
