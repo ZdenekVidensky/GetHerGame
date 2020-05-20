@@ -19,31 +19,31 @@
         {
             if (m_Laught == true)
             {
-                m_GirlCharacter.Laught();
+                StartCoroutine(m_GirlCharacter.PlayHappyAnimatoin_Coroutine());
                 m_Laught = false;
             }
 
             if (m_StartTalking == true)
             {
-                m_GirlCharacter.StartTalking();
+                m_GirlCharacter.StartTalkingAnimation();
                 m_StartTalking = false;
             }
 
             if (m_StopTalking == true)
             {
-                m_GirlCharacter.StopTalking();
+                m_GirlCharacter.StopTalkingAnimation();
                 m_StopTalking = false;
             }
 
             if (m_Angry == true)
             {
-                m_GirlCharacter.Angry();
+                StartCoroutine(m_GirlCharacter.PlayAngryAnimation_Coroutine());
                 m_Angry = false;
             }
 
             if (m_Looser == true)
             {
-                m_GirlCharacter.Looser();
+                StartCoroutine(m_GirlCharacter.PlayLooserAnimation_Coroutine());
                 m_Looser = false;
             }
         }

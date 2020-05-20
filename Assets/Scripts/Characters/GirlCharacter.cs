@@ -8,6 +8,7 @@ namespace TVB.Game.Characters
 {
     class GirlCharacter : Character
     {
+
         public DialogueGraph DialogueGraph;
         public int           Atractivity;
 
@@ -19,10 +20,11 @@ namespace TVB.Game.Characters
         [GetComponent(true), SerializeField, HideInInspector]
         private InteractableObject m_InteractableObject;
 
-        private static int TalkingHash   = Animator.StringToHash("IsTalking");
-        private static int AngryHash     = Animator.StringToHash("Angry");
-        private static int LooserHash    = Animator.StringToHash("Looser");
-        private static int LaughtingHash = Animator.StringToHash("Laughting");
+        private static int            TalkingHash     = Animator.StringToHash("IsTalking");
+        private static int            AngryHash       = Animator.StringToHash("Angry");
+        private static int            LooserHash      = Animator.StringToHash("Loser");
+        private static int            HappyHash       = Animator.StringToHash("Happy");
+        private static WaitForSeconds TransitionWait  = new WaitForSeconds(0.3f);
 
         public void Initialize(int initAtractivity, int goalAtractivity)
         {
@@ -39,6 +41,11 @@ namespace TVB.Game.Characters
 
         public IEnumerator ChangeAttractivity(int changedValue)
         {
+            if (changedValue < 0)
+            {
+                yield return PlayAngryAnimation_Coroutine();
+            }
+
             yield return m_GirlHUD.ChangeValue(changedValue);
             Atractivity = Mathf.Clamp(Atractivity + changedValue, 0, int.MaxValue);
         }
@@ -55,36 +62,46 @@ namespace TVB.Game.Characters
 
         public override IEnumerator Talk(string text)
         {
-            StartTalking();
+            StartTalkingAnimation();
             yield return base.Talk(text);
-            StopTalking();
+            StopTalkingAnimation();
         }
 
         // Animations
 
-        public void Laught()
+        public IEnumerator PlayHappyAnimatoin_Coroutine()
         {
-            m_Animator.SetTrigger(LaughtingHash);
+            m_Animator.SetTrigger(HappyHash);
+
+            yield return TransitionWait;
+            while (m_Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == HappyHash)
+                yield return null;
         }
 
-        public void StartTalking()
+        public void StartTalkingAnimation()
         {
             m_Animator.SetBool(TalkingHash, true);
         }
 
-        public void StopTalking()
+        public void StopTalkingAnimation()
         {
             m_Animator.SetBool(TalkingHash, false);
         }
 
-        public void Angry()
+        public IEnumerator PlayAngryAnimation_Coroutine()
         {
             m_Animator.SetTrigger(AngryHash);
+            yield return TransitionWait;
+            while (m_Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == AngryHash)
+                yield return null;
         }
 
-        public void Looser()
+        public IEnumerator PlayLooserAnimation_Coroutine()
         {
             m_Animator.SetTrigger(LooserHash);
+            yield return TransitionWait;
+            while (m_Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == LooserHash)
+                yield return null;
         }
     }
 }

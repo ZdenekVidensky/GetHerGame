@@ -71,10 +71,7 @@
             }
         }
 
-        public override void Deinitialize()
-        {
-            
-        }
+        public override void Deinitialize() { }
 
         // PRIVATE METHODS
 
@@ -83,14 +80,17 @@
             m_BoyCharacter.CanMove = false;
             m_GirlCharacter.SetInactive();
 
-            m_EndScreen.SetActive(true);
             
             if (atractivity >= m_GoalAtractivity)
             {
+                yield return m_GirlCharacter.PlayHappyAnimatoin_Coroutine();
+                m_EndScreen.SetActive(true);
                 m_EndScreen.PlayGoodEnding();
             }
             else
             {
+                yield return m_GirlCharacter.PlayLooserAnimation_Coroutine();
+                m_EndScreen.SetActive(true);
                 m_EndScreen.PlayBadEnding();
             }
 
