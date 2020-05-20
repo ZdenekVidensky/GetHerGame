@@ -13,6 +13,8 @@ public class PlayerControl : MonoBehaviour
     private float               m_Speed = 3f;
     [SerializeField]
     private float               m_InteractivityDistance = 3f;
+    [SerializeField]
+    private Animator            m_Animator;
 
     // PRIVATE MEMBERS
 
@@ -28,12 +30,14 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
-            m_CharacterController.Move(Vector3.left * m_Speed * Time.deltaTime);
+            m_Animator.SetBool("Walking", false);
+            //m_CharacterController.Move(Vector3.left * m_Speed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.RightArrow) == true)
         {
-            m_CharacterController.Move(Vector3.right * m_Speed * Time.deltaTime);
+            m_Animator.SetBool("Walking", true);
+            //m_CharacterController.Move(Vector3.right * m_Speed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.E) == true)
