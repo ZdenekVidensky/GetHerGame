@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_BoyCharacter: {fileID: 4570604364086852619}
   m_GirlCharacter: {fileID: 5953257038261943477}
   m_GoalAtractivity: 100
-  m_InitAtractivity: 20
+  m_InitAtractivity: 10
   m_Frontend: {fileID: 691875193}
   m_EndScreen: {fileID: 60270954469059084}
 --- !u!114 &1806044061
@@ -2381,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 9180063034427791835, guid: e77b4ba3b8547f841856f2f49f811ea6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 243.55
+      value: 243.54999
       objectReference: {fileID: 0}
     - target: {fileID: 9180063034427791835, guid: e77b4ba3b8547f841856f2f49f811ea6,
         type: 3}

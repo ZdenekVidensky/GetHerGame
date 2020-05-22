@@ -74,7 +74,7 @@
         // HANDLERS
 
         private void OnLeftButtonClicked()   => OnDecisionSelected.SafeInvoke(0);
-        private void OnRightButtonClicked()  => OnDecisionSelected.SafeInvoke(1);
-        private void OnMiddleButtonClicked() => OnDecisionSelected.SafeInvoke(2);
+        private void OnMiddleButtonClicked() => OnDecisionSelected.SafeInvoke(1);
+        private void OnRightButtonClicked()  => OnDecisionSelected.SafeInvoke(2);
     }
 }

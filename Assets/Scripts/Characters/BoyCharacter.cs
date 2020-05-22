@@ -13,7 +13,9 @@
         
         public DialogueManager DialogueManager;
 
-        private static int TalkingHash = Animator.StringToHash("IsTalking");
+        private static int TalkingHash  = Animator.StringToHash("IsTalking");
+        private static int BackflipHash = Animator.StringToHash("Backflip");
+        private static int SadHash      = Animator.StringToHash("Sad");
 
         public override IEnumerator Talk(string text)
         {
@@ -30,6 +32,17 @@
         public void StopTalkingAnimation()
         {
             m_Animator.SetBool(TalkingHash, false);
+        }
+
+        public void PlayVictoryAnimation()
+        {
+            m_Animator.applyRootMotion = true;
+            m_Animator.SetTrigger(BackflipHash);
+        }
+
+        public void PlayLoseAnimation()
+        {
+            m_Animator.SetTrigger(SadHash);
         }
     }
 }

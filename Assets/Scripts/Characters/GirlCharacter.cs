@@ -43,7 +43,7 @@ namespace TVB.Game.Characters
         {
             if (changedValue < 0)
             {
-                yield return PlayAngryAnimation_Coroutine();
+                yield return PlayVictoryAnimation();
             }
 
             yield return m_GirlHUD.ChangeValue(changedValue);
@@ -69,14 +69,6 @@ namespace TVB.Game.Characters
 
         // Animations
 
-        public IEnumerator PlayHappyAnimatoin_Coroutine()
-        {
-            m_Animator.SetTrigger(HappyHash);
-
-            yield return TransitionWait;
-            while (m_Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == HappyHash)
-                yield return null;
-        }
 
         public void StartTalkingAnimation()
         {
@@ -88,15 +80,23 @@ namespace TVB.Game.Characters
             m_Animator.SetBool(TalkingHash, false);
         }
 
-        public IEnumerator PlayAngryAnimation_Coroutine()
+        public IEnumerator PlayVictoryAnimation()
         {
             m_Animator.SetTrigger(AngryHash);
             yield return TransitionWait;
             while (m_Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == AngryHash)
                 yield return null;
         }
+        public IEnumerator PlayHappyAnimation()
+        {
+            m_Animator.SetTrigger(HappyHash);
 
-        public IEnumerator PlayLooserAnimation_Coroutine()
+            yield return TransitionWait;
+            while (m_Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == HappyHash)
+                yield return null;
+        }
+
+        public IEnumerator PlayLoseAnimation()
         {
             m_Animator.SetTrigger(LooserHash);
             yield return TransitionWait;

@@ -19,7 +19,7 @@
         {
             if (m_Laught == true)
             {
-                StartCoroutine(m_GirlCharacter.PlayHappyAnimatoin_Coroutine());
+                StartCoroutine(m_GirlCharacter.PlayHappyAnimation());
                 m_Laught = false;
             }
 
@@ -37,13 +37,13 @@
 
             if (m_Angry == true)
             {
-                StartCoroutine(m_GirlCharacter.PlayAngryAnimation_Coroutine());
+                StartCoroutine(m_GirlCharacter.PlayVictoryAnimation());
                 m_Angry = false;
             }
 
             if (m_Looser == true)
             {
-                StartCoroutine(m_GirlCharacter.PlayLooserAnimation_Coroutine());
+                StartCoroutine(m_GirlCharacter.PlayLoseAnimation());
                 m_Looser = false;
             }
         }

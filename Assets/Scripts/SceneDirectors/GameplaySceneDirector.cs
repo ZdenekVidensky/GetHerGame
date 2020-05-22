@@ -83,13 +83,15 @@
             
             if (atractivity >= m_GoalAtractivity)
             {
-                yield return m_GirlCharacter.PlayHappyAnimatoin_Coroutine();
+                m_BoyCharacter.PlayVictoryAnimation();
+                yield return m_GirlCharacter.PlayHappyAnimation();
                 m_EndScreen.SetActive(true);
                 m_EndScreen.PlayGoodEnding();
             }
             else
             {
-                yield return m_GirlCharacter.PlayLooserAnimation_Coroutine();
+                m_BoyCharacter.PlayLoseAnimation();
+                yield return m_GirlCharacter.PlayLoseAnimation();
                 m_EndScreen.SetActive(true);
                 m_EndScreen.PlayBadEnding();
             }

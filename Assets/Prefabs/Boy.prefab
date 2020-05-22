@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4794ce4f57de4f9f3b0e6f35d3268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractivityDistance: 6
+  m_InteractivityDistance: 1.15
   m_Speed: 4
   m_InteractableRay: {fileID: 7756660013609676719}
   m_Character: {fileID: 0}
