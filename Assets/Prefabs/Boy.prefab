@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166237342050884161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.233, y: 1.94, z: -0.02}
+  m_LocalPosition: {x: 0.233, y: 2.082, z: 0.106}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 3053233434050716661}
@@ -277,6 +277,36 @@ Transform:
   - {fileID: 8801188626528162603}
   m_Father: {fileID: 950431453194824903}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1568412297813387283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7756660013609676719}
+  m_Layer: 0
+  m_Name: InteractableRay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7756660013609676719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568412297813387283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.967, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3053233434050716661}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614823047529624973
 GameObject:
@@ -470,6 +500,7 @@ Transform:
   - {fileID: 3328751109937754169}
   - {fileID: 2868870176859940209}
   - {fileID: 5988494389167570069}
+  - {fileID: 7756660013609676719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486,7 +517,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ada7acb73dd02b547a5ab0a1b561ee3a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -508,6 +539,7 @@ MonoBehaviour:
   Color: {r: 0.23148806, g: 0.3197268, b: 0.9622642, a: 1}
   IsTalking: 0
   CanMove: 0
+  m_Animator: {fileID: 1878634173728832044}
   DialogueManager: {fileID: 0}
 --- !u!114 &2540264280012561775
 MonoBehaviour:
@@ -521,11 +553,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4794ce4f57de4f9f3b0e6f35d3268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 6
   m_InteractivityDistance: 6
-  m_FacingRight: 1
+  m_Speed: 4
+  m_InteractableRay: {fileID: 7756660013609676719}
   m_Character: {fileID: 0}
   m_Animator: {fileID: 1878634173728832044}
+  m_CharacterController: {fileID: 0}
 --- !u!143 &5005432802936334915
 CharacterController:
   m_ObjectHideFlags: 0
