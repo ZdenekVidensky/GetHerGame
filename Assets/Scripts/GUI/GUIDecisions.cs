@@ -52,11 +52,11 @@
             if (lenght == 2)
             {
                 m_Left.gameObject.SetActive(true);
-                m_Right.gameObject.SetActive(true);
-                m_Middle.gameObject.SetActive(false);
+                m_Middle.gameObject.SetActive(true);
+                m_Right.gameObject.SetActive(false);
 
                 m_LeftText.text  = decisions[0];
-                m_RightText.text = decisions[1];
+                m_MiddleText.text = decisions[1];
             }
 
             if (lenght > 2)
@@ -66,8 +66,8 @@
                 m_Middle.gameObject.SetActive(true);
 
                 m_LeftText.text   = decisions[0];
-                m_RightText.text  = decisions[1];
-                m_MiddleText.text = decisions[2];
+                m_MiddleText.text = decisions[1];
+                m_RightText.text  = decisions[2];
             }
         }
 
